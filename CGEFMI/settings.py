@@ -73,6 +73,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'CGEFMI.wsgi.application'
+app = application
 
 
 # Database
