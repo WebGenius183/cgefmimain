@@ -40,3 +40,15 @@ class Live(models.Model):
     
     def __str__(self):
         return self.link
+
+class Gallery(models.Model):
+    title = models.CharField(max_length=250)
+    created_at = models.DateField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+    
+class GalleryImage(models.Model):
+    gallery = models.ForeignKey(Gallery, on_delete=models.CASCADE, related_name="images") 
+    image = models.ImageField(upload_to="Images")
+
